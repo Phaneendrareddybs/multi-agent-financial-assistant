@@ -1,6 +1,10 @@
 # orchestrator/orchestrator.py
 
-from fastapi import FastAPI, Request
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
+from fastapi import FastAPI
 from pydantic import BaseModel
 from agents.api_agent import get_market_snapshot
 from agents.scraping_agent import get_earnings_surprise
